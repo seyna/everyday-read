@@ -1,0 +1,101 @@
+<div id="loader" style="display: none;">WEN'S READING ARCHIVES</div>
+		<div id="after" style="opacity: 1;">
+			<header>
+				<h1><a href="http://oldmanarchives.xyz/">WEN'S READING ARCHIVES</a></h1>
+				<div class="count">Recorded <span><%= @result.size %></span> Memories.</div>
+				<nav>
+					<ul>
+						<li><a href="#readings">Readings</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			<div id="menu-btn">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>			
+
+			<article id="top">
+				<section id="intro" class="inview active">
+					<h2 class="effect-fadein-up effect-delay-0"><a href="https://ja.wikipedia.org/wiki/%E8%A8%98%E9%8C%B2" target="_blank">Recordings</a> of Wen's <a href="https://ja.wikipedia.org/wiki/%E8%A8%98%E6%86%B6" target="_blank">Readings</a>.</h2>
+					<span class="effect-fadein-up effect-delay-200">"記録"文藝的"閱讀記憶"</span>
+					<div class="column">
+						<div class="left effect-fadein-up effect-delay-400">
+						WEN'S READING ARCHIVES is a project to encourage myself to keep reading as much as possible. I am always a bookaholic and have a habit of keeping notes to memorize the essence of every book I read. After I read 《一流の人は、本のどこに線を引いているのか》，I'm strongly inspired by author 土井英司's thinkings and thus start this project to elevate myself to next level, to embrace more challenges and pleasure.
+						</div>
+						<div class="right effect-fadein-up effect-delay-600">
+							WEN'S READING ARCHIVES 是一個為了幫助自己盡可能地讀更多的書的計畫。一直以來我都是個書蟲，而且為了記住書中的精華，一直都有寫下摘要筆記的習慣。在讀了《一流的人讀書，都在哪裡畫線？：菁英閱讀的深思考技術》後，我被作者土井英司的想法深深地啟發，於是開啟了這個專案，幫助自己提升到下一個階段，迎接更多的挑戰與樂趣。
+						</div>
+					</div>
+				</section>
+				
+				<div id="hero">
+					<div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 480px;"><ul id="hero-slider" style="width: auto; position: relative;">
+						<li aria-hidden="true" style="float: none; list-style: none; position: absolute; width: 1807px; z-index: 0; display: none;"></li>
+						<li aria-hidden="true" style="float: none; list-style: none; position: absolute; width: 1807px; z-index: 0; display: none;"></li>
+						<li aria-hidden="false" style="float: none; list-style: none; position: absolute; width: 1807px; z-index: 50; display: list-item;"></li>
+						<li aria-hidden="true" style="float: none; list-style: none; position: absolute; width: 1807px; z-index: 0; display: none;"></li>
+					</ul></div></div>
+				</div>
+				
+				<section id="readings">
+					<div class="title inview active">
+						<h3 class="effect-fadein-up effect-delay-0">List of Readings</h3>
+						<p class="effect-fadein-up effect-delay-200">自 2017 年 11 月起所讀過的所有書籍</p>
+					</div>
+					<ul class="list">
+
+						<% @result.each do |r| %>
+							<li class="inview active">
+								<div class="info effect-fadein-up effect-delay-200">
+									<div class="detail">
+										<span class="num"><%= r[:id] %></span>
+										<h4><div><%= r[:quote] %></div></h4>
+										<ul>
+											<li>W : <%= r[:summary] %></li>
+										</ul>
+									</div>
+									
+									<div class="meta">
+										<div class="limited"><%= r[:author] %>，<%= r[:publisher] %>，<%= r[:publish_year] %></div>
+										<span class="price"><%= r[:tag] %></span>
+									</div>
+									
+								</div>
+								<div class="pic effect-fadein-up effect-delay-100">
+									<div>
+										<div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative;">
+											<ul class="slider" style="width: auto; position: relative;">
+												<% r[:images].each do |i| %>
+													<li aria-hidden="false" style="float: none; list-style: none; position: absolute; width: 637px; z-index: 50; display: block;"><a target="_blank" href="<%= r[:buy_link] %>"><img src="<%= i %>" alt=""></a></li>
+												<% end %>
+											</ul>
+											</div>
+										</div>
+									</div>
+									<p class="word"><a target="_blank" href="<%= r[:buy_link] %>"><%= r[:name] %></a></p>
+								</div>
+							</li>
+						<% end %>
+
+					</ul>
+				</section>
+				
+
+			</article>
+
+			<div id="sp-menu">
+				<nav>
+					<ul>
+						<li><a href="<%= root_url %>">Top</a></li>
+						<li><a href="#readings">Readings</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<footer>
+				<span class="copy">© <%= Time.now.year %> WEN'S READING ARCHIVES.</span>
+				<span class="directed">Directed by Wen</span>
+			</footer>
+	</div>

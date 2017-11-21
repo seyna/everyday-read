@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wen's Reading Archive</title>
+  <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+	<meta name="description" content="Wen's Reading Archive">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	
+	<!--facebook ogp-->
+	<meta property="og:title" content="Wen's Reading Archive。文藝的閱讀紀錄。">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="<%= root_url %>">
+	<meta property="og:description" content="Wen's Reading Archive。文藝的閱讀紀錄。">
+	<meta property="og:image" content="http://oldmanarchives.xyz/wp/wp-content/themes/REA201709/images/hero1.jpg">
+	<meta property="og:site_name" content="Wen's Reading Archive">
+
+	<!--icon-->
+	<link rel="icon" href="<%= asset_path 'favicon-book.ico' %>">
+	<link rel="apple-touch-icon-precomposed" href="<%= asset_path 'favicon-book.png' %>">
+	
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+		</style>
+
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
