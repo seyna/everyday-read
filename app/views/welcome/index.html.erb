@@ -68,7 +68,7 @@
 										<div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative;">
 											<ul class="slider" style="width: auto; position: relative;">
 												<% r[:images].each do |i| %>
-													<li aria-hidden="false" style="float: none; list-style: none; position: absolute; width: 637px; z-index: 50; display: block;"><a target="_blank" href="<%= r[:buy_link] %>"><img src="<%= i %>" alt=""></a></li>
+													<li aria-hidden="false" style="float: none; list-style: none; position: absolute; width: 637px; z-index: 50; display: block;"><a target="_blank" href="<%= r[:buy_link] %>"><img class="lazyload" data-src="<%= i %>" src="<%= i %>" alt="<%= r[:name] %>" style="background-color: #e66b57"></a></li>
 												<% end %>
 											</ul>
 											</div>
